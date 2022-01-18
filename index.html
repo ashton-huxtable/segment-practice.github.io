@@ -57,7 +57,7 @@
         analytics.identify('1234', {
             email: email, 
             name: fullname
-        }, {context: {page: {});
+        }, {context: {page: {}}});
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
