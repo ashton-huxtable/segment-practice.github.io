@@ -58,9 +58,10 @@
             email: email, 
             firstName: fullname
         });
-        analytics.track('destination submitted', user, function() {
-            window.location.href = "";
-        });
+        analytics.page();
+//         analytics.track('destination submitted', user, function() {
+//             window.location.href = "";
+//         });
       }
     </script>
    
