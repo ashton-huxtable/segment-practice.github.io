@@ -25,7 +25,7 @@
     </script>
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
-<form name="travel" onsubmit="identify(event)">
+<form name="travel" onsubmit="identify(event)" id="travel-form">
      What is your favorite travel destination?
     <input name="destination" required="" size="81" type="text"/> 
     <br><br><br> 
@@ -43,6 +43,7 @@
    <script type="text/javascript">
       function identify(e){
         e.preventDefault();
+        var travelForm = document.getElementById("travel-form");
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
@@ -58,8 +59,11 @@
             email: email, 
             firstName: fullname
         });
-        analytics.page();
-//         analytics.track('destination submitted', user, function() {
+        analytics.trackForm(travelForm, "Destination Submitted", {
+            window.location.href = "";
+        });
+//         analytics.page();
+//         analytics.track'destination submitted', user, function() {
 //             window.location.href = "";
 //         });
       }
