@@ -59,13 +59,13 @@
             email: email, 
             firstName: fullname
         });
-        analytics.trackForm(travelForm, "Destination Submitted", user, function(){
-            window.location.href = "";
-        });
-//         analytics.page();
-//         analytics.track'destination submitted', user, function() {
+//         analytics.trackForm(travelForm, "Destination Submitted", user, function(){
 //             window.location.href = "";
 //         });
+//         analytics.page();
+        analytics.track'destination submitted', user, function() {
+            window.location.href = "";
+        });
       }
     </script>
    
