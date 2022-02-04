@@ -57,13 +57,10 @@
         };
         analytics.identify('5678', {
             email: email, 
-            firstName: fullname
+            name: fullname
         });
-//         analytics.trackForm(travelForm, "Destination Submitted", user, function(){
-//             window.location.href = "";
-//         });
-//         analytics.page();
-        analytics.track'destination submitted', user, function() {
+//         analytics.trackForm(travelForm, "Destination Submitted", user);
+        analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
       }
