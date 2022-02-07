@@ -63,7 +63,7 @@
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
-        analytics.page('Home', {context: {campaign: name:'campaign test', source: 'sourcetest', medium: 'campaign medium'}});
+        analytics.page('Home', {context: {campaign: {name:'campaign test', source: 'sourcetest', medium: 'campaign medium'}}});
 
       }
     </script>
