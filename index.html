@@ -59,6 +59,11 @@
             email: email, 
             name: fullname
         });
+          analytics.page('Home', {context: {campaign: 
+                                          {name:'campaign test', 
+                                           source: 'sourcetest', 
+                                           medium: 'campaign medium'
+                                          }}});
 //         analytics.trackForm(travelForm, "Destination Submitted", user);
         analytics.track('destination submitted', user, {context: 
                                                         {campaign: 
@@ -68,11 +73,7 @@
                         function() {
             window.location.href = "";
         });
-        analytics.page('Home', {context: {campaign: 
-                                          {name:'campaign test', 
-                                           source: 'sourcetest', 
-                                           medium: 'campaign medium'
-                                          }}});
+        
 
       }
     </script>
