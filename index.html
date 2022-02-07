@@ -60,10 +60,15 @@
             name: fullname
         });
 //         analytics.trackForm(travelForm, "Destination Submitted", user);
-        analytics.track('destination submitted', user, function() {
+        analytics.track('destination submitted', user, {context: 
+                                                        {campaign: 
+                                                         {name:'campaign test', 
+                                                          source: 'sourcetest', 
+                                                          medium: 'campaign medium'}}}, 
+                        function() {
             window.location.href = "";
         });
-        analytics.page('Home', {context: {campaign: {name:'campaign test', source: 'sourcetest', medium: 'campaign medium'}}});
+//         analytics.page('Home', {context: {campaign: {name:'campaign test', source: 'sourcetest', medium: 'campaign medium'}}});
 
       }
     </script>
