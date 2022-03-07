@@ -13,16 +13,19 @@
 
 </head> 
 <body> 
-     <iframe src="https://player.vimeo.com/video/76979871" width="640" height="360"
-    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-        var iframe = document.querySelector('iframe');
-        var player = new Vimeo.Player(iframe);
-        var VimeoAnalytics = window.analyticsPlugins.VimeoAnalytics
-        var vimeoAnalytics = new VimeoAnalytics(player, '4a7bfe8a28b3fdaa098b370131ebe0ad')
-        vimeoAnalytics.initialize()
-    </script>
+    
+    <iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" 
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+    analytics.ready(function () {
+      var VimeoAnalytics = window.analytics.plugins.VimeoAnalytics
+      var vimeoAnalytics = new VimeoAnalytics(player, 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX0365')
+      vimeoAnalytics.initialize()
+    })
+</script>
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
 <form name="travel" onsubmit="identify(event)" id="travel-form">
