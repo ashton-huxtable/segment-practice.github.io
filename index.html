@@ -46,6 +46,7 @@
    <script type="text/javascript">
       function identify(e){
         e.preventDefault();
+        var anonId = analytics.user().anonymousId();  
         var travelForm = document.getElementById("travel-form");
         var form = e.target;
         var email = form["email"].value;
@@ -60,7 +61,8 @@
         };
         analytics.identify('375238674104', {
             email: email, 
-            name: fullname
+            name: fullname,
+            anonId: anonId
         });
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
