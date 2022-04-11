@@ -64,15 +64,16 @@
             name: fullname,
             anonId: anonId
         });
-        analytics.track('destination submitted', user, function() {
-            window.location.href = "";
-        });
-        analytics.group("082108c8-f51e-485f-9d2d-b6ba57ee2c40", {
+       analytics.group("082108c8-f51e-485f-9d2d-b6ba57ee2c40", {
           groupType: "Organization",
           groupName: "ExampleCorp, LLC",
           employees: "20",
           email: "hello@example.com"
         });
+        analytics.track('destination submitted', user, function() {
+            window.location.href = "";
+        });
+   
         
 
       }
