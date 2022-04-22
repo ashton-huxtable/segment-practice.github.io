@@ -70,9 +70,13 @@
           employees: "20",
           email: "hello@example.com"
         });
+          
+        analytics.track('test', {name: 'test'});
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
+          
+        
    
         
 
