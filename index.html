@@ -7,25 +7,47 @@
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="IpEvkYW02DWwrs3W77WUtIYLj6NOOqCx";;analytics.SNIPPET_VERSION="4.15.3";
       analytics.load("IpEvkYW02DWwrs3W77WUtIYLj6NOOqCx");
+      analytics.ready(function () {
+        const getUA = () => {
+            let device = "Unknown";
+            const ua = {
+                "Generic Linux": /Linux/i,
+                "Android": /Android/i,
+                "BlackBerry": /BlackBerry/i,
+                "Bluebird": /EF500/i,
+                "Chrome OS": /CrOS/i,
+                "Datalogic": /DL-AXIS/i,
+                "Honeywell": /CT50/i,
+                "iPad": /iPad/i,
+                "iPhone": /iPhone/i,
+                "iPod": /iPod/i,
+                "macOS": /Macintosh/i,
+                "Windows": /IEMobile|Windows/i,
+                "Zebra": /TC70|TC55/i,
+            }
+            Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
+            return device;
+        }
+        var device_type = getUA();
+        console.log(device_type)
+
+        //call native mixpanel method to add Device property when the Segment payload is flighted to Mixpanel SDK
+        mixpanel.register({
+            "Device": device_type
+        });
+      });
       analytics.page();
       }}();
+    </script>
+     <script>
+        analytics.identify("001mixdm-1")
+        analytics.page("Mixpanel Page - DM") //DM = device mode
+        analytics.track("Mixpanel Event - DM"); //DM = device mode
     </script>
 
 </head> 
 <body> 
     
-    <iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" 
-            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-    var iframe = document.querySelector('iframe');
-    var player = new Vimeo.Player(iframe);
-    analytics.ready(function () {
-      var VimeoAnalytics = window.analytics.plugins.VimeoAnalytics
-      var vimeoAnalytics = new VimeoAnalytics(player, '4a7bfe8a28b3fdaa098b370131ebe0ad')
-      vimeoAnalytics.initialize()
-    })
-</script>
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
 <form name="travel" onsubmit="identify(event)" id="travel-form">
