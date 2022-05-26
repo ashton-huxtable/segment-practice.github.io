@@ -10,10 +10,10 @@
       analytics.ready(function() {
         let userId = analytics.user().id()
         if(!userId){
-           analytics.identify('1234')
+           analytics.identify('1234');
+           analytics.page();
          }
       });
-      analytics.page();
     </script>
 
 
