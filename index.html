@@ -12,7 +12,8 @@
     </script>
     <script>
         function checkForId(){
-         if(!analytics.user().id()){
+         let userId = analytics.user().id()
+         if(!userId){
            analytics.identify('1234')
          }
         }
