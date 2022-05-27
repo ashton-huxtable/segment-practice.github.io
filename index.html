@@ -8,9 +8,9 @@
       analytics.load("IpEvkYW02DWwrs3W77WUtIYLj6NOOqCx");
       }}();
       analytics.ready(function() {
-        let userId = analytics.user().id()
-        if(!userId){
-           analytics.identify('1234');
+        let event = analytics.page();
+        if(!event.integrations.context.campaign){
+           analytics.identify({isOrganicUser: true});
          }
         analytics.page();
   
