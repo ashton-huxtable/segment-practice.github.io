@@ -10,7 +10,7 @@
       analytics.ready(function() {
         let event = analytics.page();
           console.log(event)
-        if(!event.integrations.context.campaign){
+        if(!event.context.campaign){
            analytics.identify({isOrganicUser: true});
          }
         analytics.page();
