@@ -57,13 +57,18 @@
         analytics.identify('375238674104', {
             email: email, 
             name: fullname,
-            anonId: anonId
+            company: {
+                id: '123',
+                name: 'ExampleCorp LLC'
+            },
+            userId: '375238674104'
+            
         });
-       analytics.group("082108c", {
+       analytics.group("123", {
           groupType: "Organization",
-          groupName: 'ExampleCorp LLC',
+          name: 'ExampleCorp LLC',
           employees: "20",
-          email: "hello@example.com"
+          eosType: 'testing'
         });
 //           analytics.page();
           
