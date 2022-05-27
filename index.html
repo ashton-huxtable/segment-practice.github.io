@@ -9,6 +9,7 @@
       }}();
       analytics.ready(function() {
         let event = analytics.page();
+          console.log(event)
         if(!event.integrations.context.campaign){
            analytics.identify({isOrganicUser: true});
          }
