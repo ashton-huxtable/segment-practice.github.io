@@ -8,17 +8,7 @@
       analytics.load("IpEvkYW02DWwrs3W77WUtIYLj6NOOqCx");
       analytics.page();
       }}();
-        
-      setTimeout(() => {
-        const timeouts = [0, 100, 200, 300, 400, 500];
-        for (let index in timeouts) {
-        const t = timeouts[index];
-        setTimeout(() => {
-        console.log(t);
-        window.analytics.track('test', {timeout: t});
-        }, t);
-        }
-      }, 500)
+
 </script>
     
 
