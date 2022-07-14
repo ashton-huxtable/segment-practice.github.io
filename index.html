@@ -49,23 +49,16 @@
             destination: destination, 
             details: details,
         };
-        analytics.identify(anonId, {
+        analytics.identify('00000', {
             email: email, 
-            name: fullname,
-            company: {
-                id: '123',
-                name: 'ExampleCorp LLC'
-            },
-            userId: '375238674104'
-            
+            name: fullname,            
         });
-//        analytics.group("123", {
-//           groupType: "Organization",
-//           name: 'ExampleCorp LLC',
-//           employees: "20",
-//           eosType: 'Yes'
-//         });
-//           analytics.page();
+       analytics.group("123", {
+          groupType: "Organization",
+          groupName: 'ExampleCorp LLC',
+          employees: "20"
+        });
+          analytics.page();
           
 //         analytics.track('test', {name: 'test'}, {integrations: {'All': false}});
         analytics.track('destination submitted', user, function() {
