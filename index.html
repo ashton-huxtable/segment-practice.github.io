@@ -37,6 +37,9 @@
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
+<div>
+    <button id="reset-button" onClick="analytics.reset()">Clear User Data</button><button id="debug-button" onClick="analytics.debug(true)">Debug AJS</button>
+</div>
    <script type="text/javascript">
       function identify(e){
         e.preventDefault();
